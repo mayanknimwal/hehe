@@ -2,63 +2,87 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #f0f0f3;
-    color: #333;
+    background-color: #ffe6f2;
+    color: #ff4081;
     overflow-x: hidden;
     margin: 0;
     padding: 0;
 }
 
-/* Neumorphism effect for gallery container */
+/* Love-Themed Neumorphism for gallery */
 .glass-container {
-    background: #f0f0f3;
+    background: #ffebef;
     border-radius: 15px;
     padding: 20px;
-    box-shadow: 8px 8px 15px #b8b8b8, -8px -8px 15px #ffffff;
+    box-shadow: 8px 8px 15px #e0a4b9, -8px -8px 15px #ffffff;
     max-width: 800px;
     margin: auto;
 }
 
-/* Title styling with soft shadow */
+/* Title styling with romantic glow */
 h1 {
     margin: 20px 0;
     font-size: 28px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    text-shadow: 2px 2px 5px rgba(255, 64, 129, 0.5);
 }
 
-/* Grid layout for gallery */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-    max-width: 90%;
-    margin: auto;
-}
-
-/* Neumorphism effect for images */
+/* Heart-shaped image frames */
 .photo img {
     width: 100%;
     height: auto;
-    border-radius: 15px;
-    background: #f0f0f3;
-    box-shadow: 8px 8px 15px #b8b8b8, -8px -8px 15px #ffffff;
+    border-radius: 50%;
+    background: #ffebef;
+    box-shadow: 8px 8px 15px #e0a4b9, -8px -8px 15px #ffffff;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .photo img:hover {
     transform: scale(1.05);
-    box-shadow: 10px 10px 20px #b8b8b8, -10px -10px 20px #ffffff;
+    box-shadow: 10px 10px 20px #e0a4b9, -10px -10px 20px #ffffff;
 }
 
-/* Neumorphic button */
+/* Floating hearts animation */
+#hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    bottom: 0;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    clip-path: polygon(50% 0%, 100% 35%, 82% 100%, 50% 85%, 18% 100%, 0% 35%);
+    animation: floatUp 5s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.5) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Romantic neumorphic button */
 #music-btn {
-    background: #f0f0f3;
+    background: #ffebef;
     border: none;
     padding: 12px;
     font-size: 16px;
     border-radius: 20px;
     cursor: pointer;
-    box-shadow: 6px 6px 10px #b8b8b8, -6px -6px 10px #ffffff;
+    box-shadow: 6px 6px 10px #e0a4b9, -6px -6px 10px #ffffff;
     transition: all 0.3s ease-in-out;
     width: 90%;
     max-width: 300px;
@@ -68,7 +92,7 @@ h1 {
 
 #music-btn:hover {
     transform: scale(1.05);
-    box-shadow: 8px 8px 15px #b8b8b8, -8px -8px 15px #ffffff;
+    box-shadow: 8px 8px 15px #e0a4b9, -8px -8px 15px #ffffff;
 }
 
 /* Mobile Optimizations */
@@ -83,5 +107,8 @@ h1 {
     #music-btn {
         font-size: 14px;
         padding: 10px;
+    }
+    .heart {
+        animation-duration: 4s !important;
     }
 }
