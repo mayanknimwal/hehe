@@ -26,15 +26,23 @@ h1 {
     text-shadow: 2px 2px 5px rgba(255, 64, 129, 0.5);
 }
 
-/* Perfect Heart-Shaped Image Cutout */
+/* Perfect Heart-Shaped Image Cutout with Proper Sizing */
+.photo {
+    width: 200px; /* Fixed size for uniform heart shape */
+    height: 200px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
 .photo img {
     width: 100%;
-    height: auto;
-    background: #ffebef;
-    box-shadow: 8px 8px 15px #e0a4b9, -8px -8px 15px #ffffff;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    clip-path: path("M150 30 C 130 10, 90 0, 50 50 C 10 100, 50 180, 150 230 C 250 180, 290 100, 250 50 C 210 0, 170 10, 150 30 Z");
+    height: 100%;
     object-fit: cover;
+    position: absolute;
+    clip-path: path("M 150 30 C 130 10, 90 0, 50 50 C 10 100, 50 180, 150 230 C 250 180, 290 100, 250 50 C 210 0, 170 10, 150 30 Z");
 }
 
 .photo img:hover {
